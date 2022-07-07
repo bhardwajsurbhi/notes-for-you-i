@@ -9,9 +9,16 @@ const AddNote = (props) => {
    
     const handleClick= (e)=>{
         e.preventDefault();
-        addNote(note.title, note.description, note.tag);
-        setNote({title: "", description: "", tag: ""})// to display change write value={note} in form
-        props.showAlert("Added Successfully", "success")
+        if(note.title.length<5 || note.description.length<5){
+            props.showAlert("Title or Description cannot be less than five characters", "danger")
+
+        }
+        else{
+
+            addNote(note.title, note.description, note.tag);
+            setNote({title: "", description: "", tag: ""})// to display change write value={note} in form
+            props.showAlert("Note Added Successfully", "success")
+        }
         
     }
 
@@ -39,7 +46,7 @@ const AddNote = (props) => {
                     <input type="text" className="form-control" minLength={5} required id="tag" value={note.tag} name="tag" onChange={onChange}/>
                 </div>
                 
-                <button disabled={note.title.length<5 || note.description.length<5} type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
+                <button  type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
             </form>
 
         </div>
