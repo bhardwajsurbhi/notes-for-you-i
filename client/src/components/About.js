@@ -18,7 +18,9 @@ const About = () => {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active" >
-            <div className="overlay-image" style={{ backgroundImage: "url(http://localhost:3000/images/notes1.jpg)" }}>
+            <div> 
+              {/* className="overlay-image" style={{ backgroundImage: "url(http://localhost:3000/images/notes1.jpg)" }}> */}
+              <img className='img-fluid' src="/images/notes1.jpg" alt="" />
             </div>
             <div className='containerAbout'>
 
@@ -57,8 +59,9 @@ const About = () => {
           </div>
           <div className="carousel-item">
 
-            <div className="overlay-image img-fluid" style={{ backgroundImage: "url(http://localhost:3000/images/notes2.jpg)" }}>
-              
+            <div>
+               {/* className="overlay-image img-fluid" style={{ backgroundImage: "url(http://localhost:3000/images/notes2.jpg)" }}> */}
+               <img className='img-fluid' src="/images/notes2.jpg" alt="" />
             </div>
             <div className='containerAbout'>
 
